@@ -30,7 +30,7 @@ public ResponseEntity updateAddressToTeacher(@Valid @RequestBody AddressDTO addr
 
 }
 @DeleteMapping("/delete")
-    public ResponseEntity deleteAddressFromTeacher(@Valid @RequestBody Integer id) {
+    public ResponseEntity deleteAddressFromTeacher(@PathVariable Integer id) {
     addressService.deleteAddress(id);
     return  ResponseEntity.status(200).body("Address deleted successfully");
 }
