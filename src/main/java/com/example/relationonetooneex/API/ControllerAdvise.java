@@ -12,5 +12,14 @@ public class ControllerAdvise {
     public ResponseEntity ApiException(APIException e){
         return ResponseEntity.status(400).body(e.getMessage());}
 
+    @ExceptionHandler(value = NoResourceFoundException.class)
+    public ResponseEntity NoResourceFoundException(NoResourceFoundException e){
+        return ResponseEntity.status(404).body(e.getMessage());
+    }
+    @ExceptionHandler(value = DataIntegrityViolationException.class)
+    public ResponseEntity DataIntegrityViolationException(DataIntegrityViolationException e){
+        return ResponseEntity.status(400).body(e.getMessage());
+    }
+
 
 }
