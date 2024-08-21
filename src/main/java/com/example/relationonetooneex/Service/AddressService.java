@@ -28,7 +28,7 @@ public class AddressService {
             throw new APIException("Cannot Assign Address");
         }
         Address address = new Address(null,addressDTO.getArea(),addressDTO.getStreet(),addressDTO.getBuildingNumber(),teacher);
-        teacherRepository.save(teacher);
+        addressRepository.save(address);
     }
 
     public void updateAddress(AddressDTO addressDTO) {
@@ -50,7 +50,5 @@ public class AddressService {
       addressRepository.delete(address);
     }
 }
-
-
 
 
